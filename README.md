@@ -1,37 +1,124 @@
-# Kobo → Python → SQL → Power BI (MEL) — NFI Distributions (Goma, DRC)
+Kobo-to-PowerBI-Pipeline-MEL
+Overview
 
-**EN (quick summary)**: End-to-end MEL reporting pipeline for NFI distributions in DRC: Kobo API extraction, Python cleaning + data quality checks (DQA), risk/fraud flags, SQL marts, and Power BI dashboards for MEL, operations and donor reporting. Uses synthetic data only.
+This project demonstrates an end-to-end Monitoring, Evaluation and Learning (MEL) reporting pipeline for a humanitarian NGO operating in Eastern Democratic Republic of Congo.
 
-**FR** : Ce projet simule un cas très courant en ONG à l’Est RDC : les données Kobo existent, mais le reporting est manuel, tardif et fragile. Je propose une chaîne complète et réaliste pour passer à un reporting fiable et rapide : extraction API Kobo, nettoyage Python, contrôles qualité (DQA), détection d’anomalies/fraude, structuration SQL, et tableaux de bord Power BI adaptés aux besoins MEL, opérations et bailleurs.
+The objective is to automate the reporting process from KoboToolbox data collection to Power BI dashboards.
 
----
+The project uses synthetic data and does not contain any real beneficiary information.
 
-## Business context
-- Location: Goma (North Kivu) + territories
-- Activity: NFI distributions to displaced households
-- Constraints: intermittent connectivity, dispersed teams, donor reporting pressure, data quality issues
+Business Context
 
-See `docs/00_story_and_context.md`
+An NGO conducts Non-Food Item (NFI) distributions for internally displaced households in:
 
----
+Goma
+Nyiragongo
+Rutshuru
+Masisi
 
-## What this solves
-- Replace manual CSV exports and Excel cleaning
-- Reduce reporting delay from weeks to near-real-time
-- Standardize KPIs and definitions (indicator reference sheets)
-- Add Data Quality as a first-class reporting component
-- Flag potential duplicates/fraud patterns for follow-up
+Field teams collect data using KoboToolbox.
 
----
+The reporting process is often manual:
 
-## Architecture (high level)
-KoboToolbox -> Kobo API -> Python (clean + DQA + risk flags) -> SQL marts -> Power BI dashboards
+CSV exports
+Excel cleaning
+Manual consolidation
+Delayed reporting
 
-See `docs/01_architecture.md`
+This project proposes an automated solution.
 
----
+Problem Statement
 
-## Quick start (demo with synthetic data)
-1) Start Postgres:
-```bash
-docker compose up -d
+The manual process creates:
+
+Reporting delays
+Data quality issues
+Duplicate records
+Difficult donor reporting
+High workload for MEL teams
+Proposed Solution
+
+KoboToolbox
+
+↓
+
+Python Data Processing
+
+↓
+
+Data Quality Checks
+
+↓
+
+SQLite Database
+
+↓
+
+Power BI Dashboard
+
+↓
+
+Decision Making
+
+Project Objectives
+Automate data extraction
+Standardize data cleaning
+Improve data quality
+Reduce reporting delays
+Create reliable dashboards
+Support evidence-based decisions
+Technologies Used
+Python
+Pandas
+SQLite
+SQL
+Power BI
+GitHub
+Project Structure
+
+data/
+Raw and processed datasets
+
+docs/
+Business documentation
+
+sql/
+Database scripts
+
+src/
+Python scripts
+
+powerbi/
+Dashboard files
+
+screenshots/
+Project screenshots
+
+Key Performance Indicators (KPIs)
+MEL Indicators
+Households reached
+Individuals reached
+Distribution coverage
+Distribution trends
+Data Quality Indicators
+Missing values
+Duplicate records
+Reporting delays
+Validation pass rate
+Expected Results
+
+The project demonstrates how an NGO can:
+
+Improve reporting quality
+Reduce manual work
+Increase transparency
+Strengthen donor reporting
+Data Privacy
+
+All datasets are synthetic.
+
+No real beneficiary information is included.
+
+Author
+
+Portfolio project developed for Data Analytics, MEL and Information Management positions within NGOs, international organizations and development programs.
